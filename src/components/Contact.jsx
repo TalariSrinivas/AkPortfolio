@@ -4,114 +4,98 @@ import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
 
 function Contact() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm()
-    
-    const onSubmit = async (data) => {
-        const userInfo={
-            name:data.name,
-            email:data.email,
-            message:data.message,
-        }
-        try{
-           await axios.post("https://getform.io/f/ajjegnla",userInfo);
-           toast.success("Your message has been sent");
-        }
-        catch(error){
-            console.log(error);
-        }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
+  const onSubmit = async (data) => {
+    const userInfo = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    };
+    try {
+      await axios.post("https://getform.io/f/ajjegnla", userInfo);
+      toast.success("Your message has been sent");
+    } catch (error) {
+      console.log(error);
     }
+  };
 
   return (
-    <>
-        <div name="Contact" className='max-w-screen-2xl container mx-auto px-4 md:px-20 md:pt-20 pb-10'>
-            
-            <h1 className='text-3xl font-bold mb-4'>Contact me</h1>
-            <span className='flex justify-center'>Please check out my socials</span>
-            <div className="flex flex-col text-white justify-center mx-auto w-full pb-14">
-                    <h1 className="font-bold text-2xl text-center p-2">TEAM</h1>
-                    <div className="flex flex-wrap justify-center mt-6 gap-6">
-                        <a href="https://in.linkedin.com/in/anil-gummula" target="_blank" className="w-full sm:w-auto">
-                            <div className="flex items-center border-2 rounded-lg p-6 sm:p-10">
-                                <img src="/linkedin.png" alt="" className="border-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full" />
-                                <p className="ml-6 text-lg sm:text-xl font-semibold text-blue-400 underline">anil-gummula</p>
-                            </div>
-                        </a>
+    <div name="Contact" className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16 bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white">
+      <h1 className="text-4xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500">Contact Me</h1>
+      <p className="text-center text-gray-400 mb-8">Feel free to reach out through socials or the form below.</p>
 
-                        <a href="https://github.com/anilgummula" target="_blank" className="w-full sm:w-auto">
-                            <div className="flex items-center border-2 rounded-lg p-6 sm:p-10">
-                                <img src="/github.png" alt="" className="border-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full" />
-                                <p className="ml-6 text-lg sm:text-xl font-semibold text-gray-400 underline">anilgummula</p>
-                            </div>
-                        </a>
-                        <a href="mailto:anilgummula2060@gmail.com" target="_blank" className="w-full sm:w-auto">
-                        <div className="flex items-center border-2 rounded-lg p-6 sm:p-10">
-                            <img src="/mail.png" alt="" className="border-2 w-12 h-12 sm:w-14 sm:h-14 rounded-full" />
-                            <p className="ml-6 text-base sm:text-base font-semibold text-yellow-300 underline break-words">
-                            anilgummula2060...
-                            </p>
-                        </div>
-                        </a>
-                        
-                    </div>
-                </div>
-            <span className='flex justify-center'>Please fill out the form below to contact me</span>
-            <div className='flex flex-col justify-center items-center mt-5'>
-                <form 
-                onSubmit={handleSubmit(onSubmit)}
-                // action="https://getform.io/f/ajjegnla" 
-                // method='POST'
-                className='bg-slate-200 w-96 px-8 py-6 rounded-xl'
-                >
-                    <h1 className='text-xl font-semibold mb-4'>Send Your Message</h1>
-                    <div className='flex flex-col mb-4'>
-                        <label className='block text-gray-700'>Full Name</label>
-                        <input type="text" 
-                        {...register("name", { required: true })} 
-                        className='shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline '
-                        id='name'
-                        name='name'
-                        placeholder='Enter your fullname'
-                        />
-                        {errors.name && <span>This field is required</span>}
-                    </div>
+      <div className="flex flex-wrap justify-center gap-6 mb-14">
+        <a href="https://www.linkedin.com/in/g-akash-4b1b40256/" target="_blank" rel="noopener noreferrer">
+          <div className="flex items-center bg-gray-800 border border-gray-700 rounded-xl px-6 py-4 hover:scale-105 transition duration-300">
+            <img src="/linkedin.png" alt="LinkedIn" className="w-12 h-12 rounded-full border border-blue-500" />
+            <p className="ml-4 text-blue-400 text-lg underline">g-akash</p>
+          </div>
+        </a>
 
-                    <div className='flex flex-col mb-4'>
-                        <label className='block text-gray-700'>Email Address</label>
-                        <input type="text" 
-                        {...register("email", { required: true })} 
-                        className='shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline '
-                        id='email'
-                        name='email'
-                        placeholder='Enter your email address'
-                        />
-                        {errors.email && <span>This field is required</span>}
-                    </div>
-                    
-                    <div className='flex flex-col mb-4'>
-                        <label className='block text-gray-700'>Message</label>
-                        <textarea type="text"
-                        {...register("message", { required: true })} 
-                        className='shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline '
-                        id='message'
-                        name='message'
-                        placeholder='Enter your Query'
-                        />
-                        {errors.message && <span>This field is required</span>}
-                    </div>
+        <a href="https://github.com/google-akash" target="_blank" rel="noopener noreferrer">
+          <div className="flex items-center bg-gray-800 border border-gray-700 rounded-xl px-6 py-4 hover:scale-105 transition duration-300">
+            <img src="/github.png" alt="GitHub" className="w-12 h-12 rounded-full border border-white" />
+            <p className="ml-4 text-gray-300 text-lg underline">google-akash</p>
+          </div>
+        </a>
 
-                    <button type='submit' className='bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-200'>
-                        Send
-                    </button>
-                </form>
-            </div>
-        </div>
-    </>
-  )
+        <a href="mailto:gakash81062@gmail.com" target="_blank" rel="noopener noreferrer">
+          <div className="flex items-center bg-gray-800 border border-gray-700 rounded-xl px-6 py-4 hover:scale-105 transition duration-300">
+            <img src="/mail.png" alt="Email" className="w-12 h-12 rounded-full border border-yellow-300" />
+            <p className="ml-4 text-yellow-300 text-lg underline break-words">gakash81062@gmail.com</p>
+          </div>
+        </a>
+      </div>
+
+      <div className="flex justify-center">
+        <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-800 border border-gray-700 p-8 rounded-2xl w-full max-w-md text-white shadow-lg">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Send a Message</h2>
+
+          <div className="mb-4">
+            <label className="block mb-1 text-gray-300">Full Name</label>
+            <input
+              type="text"
+              {...register("name", { required: true })}
+              className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-600 text-white focus:outline-none focus:border-teal-400"
+              placeholder="Your full name"
+            />
+            {errors.name && <p className="text-red-400 text-sm mt-1">This field is required</p>}
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-1 text-gray-300">Email Address</label>
+            <input
+              type="email"
+              {...register("email", { required: true })}
+              className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-600 text-white focus:outline-none focus:border-teal-400"
+              placeholder="Your email address"
+            />
+            {errors.email && <p className="text-red-400 text-sm mt-1">This field is required</p>}
+          </div>
+
+          <div className="mb-6">
+            <label className="block mb-1 text-gray-300">Message</label>
+            <textarea
+              {...register("message", { required: true })}
+              className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-600 text-white focus:outline-none focus:border-teal-400"
+              placeholder="Type your message here..."
+              rows={4}
+            />
+            {errors.message && <p className="text-red-400 text-sm mt-1">This field is required</p>}
+          </div>
+
+          <button type="submit" className="w-full bg-gradient-to-r from-teal-500 to-green-500 hover:from-green-600 hover:to-teal-600 text-white py-2 rounded-xl font-semibold transition duration-200">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
-export default Contact
+export default Contact;

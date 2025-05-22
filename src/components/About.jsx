@@ -1,71 +1,74 @@
-import React from 'react'
+import React from 'react';
 
 function About() {
   return (
+    <div
+      name="About"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-20 text-white bg-gradient-to-b from-gray-900 via-gray-950 to-black"
+    >
+      <h1 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500">
+        About Me
+      </h1>
 
-    <>
-    <div name="About" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-16'>
-        <h1 className='text-3xl font-bold mb-5'>About</h1>
-        <p>
-            Hello, I'm Anil, a passionate Web developer with a keen eye for MERN Stack . With a background in IT, I strive to create impactful and visually stunning Software solutions that leave a lasting impression.
+      <p className="text-gray-300 text-lg leading-relaxed">
+        Hello, I'm <strong className="text-white">Guguloth Akash</strong>, a passionate Software Engineer with a strong foundation in C, C++, Java, Python, and JavaScript. I have hands-on experience in full-stack web development using the MERN stack. I'm eager to contribute to real-world projects and grow through continuous learning and collaboration.
+      </p>
+
+      {/* Education */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-teal-400">🎓 Education</h2>
+        <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+          <li><strong>B.Tech in CSE</strong>, RGUKT-Basar (2022 - Present), GPA: 7.6</li>
+          <li><strong>Pre-University Course</strong>, RGUKT-Basar (2020 - 2022), GPA: 8.67</li>
+        </ul>
+      </section>
+
+      {/* Skills */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-teal-400">🛠️ Skills & Expertise</h2>
+        <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+          <li><strong>Languages:</strong> JAVA, C, PYTHON</li>
+          <li><strong>Frameworks & Libraries:</strong> Pandas, Numpy, Matplotlib</li>
+          <li><strong>Tools & Technologies:</strong> MySQL, Git, GitHub</li>
+          <li><strong>Platforms:</strong> Jupyter Notebook, VS Code</li>
+          <li><strong>Soft Skills:</strong> Problem Solving, Quick Learner, Time Management</li>
+        </ul>
+      </section>
+
+      {/* Projects */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-teal-400">📁 Projects</h2>
+        <p className="text-gray-300 mt-2">
+          <strong>Eco Snap Reward System</strong> — A web platform where users upload nature-themed photos and earn credits after admin approval. Includes admin dashboard, credit withdrawal, and gamified awareness features.
         </p>
-        <br />
-        <h1 className='text-green-600 text-xl font-semibold'>
-            B.Tech, Computer Science and Engineering
-        </h1>
-        <span>
-            [B.Tech/CSE], [3yr] , [RGUKT-Basar], [2026 Graduation]
-        </span>
-        <br />
-        <br />
-        <h1 className='text-green-600 text-xl font-semibold'>
-            Skills & Expertise
-        </h1>
-        <span>
-        ↪ &nbsp; Proficient in <span className='text-blue-500 font-semibold'>MERN STACK</span> [ReactJS,NodeJS,Express,TailwindCSS]
-        <br /> 
-        ↪ &nbsp; Experienced with [<span className='text-blue-500 font-semibold'>GIT/GITHUB</span>] 
-        <br />
-        ↪ &nbsp; Strong grasp of [<span className='text-blue-500 font-semibold'>Designing with TailwindCSS</span>] 
-        {/* <br />
-        ↪ &nbsp; Excellent problem-solving skills Effective communicator and collaborator */}
-        </span>
-        <br />
-        <br />
-        <h1 className='text-green-600 text-xl font-semibold'>
-        Professional Experience
-        </h1>
-        <span>
-        ↪ &nbsp; Project farmer market picked from <span className='text-orange-600 font-bold'>SIH</span> and made using <span className="font-bold text-red-500">MERN</span> (<a className='text-blue-600 font-semibold' href="https://farmarket.netlify.app/" target='_blank'>Farmer market</a>  ) 
-        <br />
-        ↪ &nbsp; Me with my teammates made a 3D-Game using  <span className='font-bold text-red-500'>Unity & Blender</span> Game Site : (<a className='text-teal-600 font-semibold' href="https://rgukt-game.netlify.app/" target='_blank'>Rgukt-Game</a>  )
-        <br />
-        ↪ &nbsp; I made this entire webpage(portfolio site) using  <span className='font-bold text-red-500'>React Js and TailwindCSS</span> portfolio website : (<a className='text-cyan-600 font-semibold' href="https://glistening-smakager-37a1c1.netlify.app/" target='_blank'>My Portfolio</a>  )
-        <br />
-            {/* 3) I have made some static clone websites like myntra clone using html:  (<a className='text-blue-600' href="https://www.decodedevils.shop/" target='_blank'>Myntra Clone</a>  ) 
-        <br /> */}
-        </span>
-        <br />
-        <br />
-        <h1 className='text-green-600 text-xl font-semibold'>
-        Achievements & Awards
-        </h1>
-        <a href="https://rgukt-game.netlify.app/" target="_blank">
-            <span>
-            <p className=" text-gray-500 font-bold">Got the first prize for our project [RGUKT-Game] in TechFest-2k25 RGUKT Antahpragnya</p>
-            </span>
-        </a>
-        <br />
-        <br />
-        <h1 className='text-green-600 text-xl font-semibold'>
-        Mission Statement
-        </h1>
-        <p>
-        My mission is to leverage my skills and creativity to deliver innovative ideas and solutions that exceed client expectations and contribute positively to the digital landscape. I am committed to continuous learning and growth, always seeking new challenges and opportunities to expand my horizons.   </p>
-        
+      </section>
+
+      {/* Certifications */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-teal-400">📜 Certifications</h2>
+        <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
+          <li><strong>Programming in Python</strong> (Meta) — March 2024</li>
+          <li><strong>Web Development for Beginners</strong> – freeCodeCamp — March 2025</li>
+        </ul>
+      </section>
+
+      {/* Achievements */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-teal-400">🏆 Achievements</h2>
+        <p className="text-gray-300 mt-2">
+          Solving algorithmic challenges on <strong>GeeksforGeeks</strong> and <strong>LeetCode</strong> with a solid grip on DSA.
+        </p>
+      </section>
+
+      {/* Mission */}
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-teal-400">🎯 Mission Statement</h2>
+        <p className="text-gray-300 mt-2">
+          My mission is to build meaningful software applications using problem-solving and full-stack skills. I aim to grow continuously and contribute effectively as a team player and creative thinker.
+        </p>
+      </section>
     </div>
-    </>
-  )
+  );
 }
 
 export default About;
